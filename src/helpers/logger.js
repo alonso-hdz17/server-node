@@ -1,12 +1,5 @@
-import pino from 'pino'
+import consola from 'consola'
 
-const logger = pino({
-  transport: {
-    target: 'pino-pretty',
-    options: {
-      colorize: true,
-    },
-  },
-})
+const logger = consola
 
 export default logger
