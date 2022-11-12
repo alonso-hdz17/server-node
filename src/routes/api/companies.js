@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 
 router.post('/:id', async (req, res) => {
   const companyId = req.params.id
-  const company = await getCompanies(companyId)
+  const company = await getCompany(companyId)
   if (company) {
     const departmentName = req.body.name
     if (departmentName) {
@@ -41,7 +41,7 @@ router.post('/:id', async (req, res) => {
       res.status(400).send({ msg: 'Department name is required' })
     }
   } else {
-    res.status(400).send({ msg: 'Company does not exist required ' })
+    res.status(400).send({ msg: 'Company does not exist required' })
   }
 })
 
