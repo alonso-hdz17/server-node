@@ -21,7 +21,12 @@ app.use(
   }),
 )
 app.use(morgan(process.env.MORGAN_LOG))
-app.use(cors({ origin: process.env.ORIGIN }))
+app.use(
+  cors({
+    origin: process.env.ORIGIN,
+    exposedHeaders: ['x-total-count', 'x-total-pages'],
+  }),
+)
 app.use(helmet())
 app.use(bodyParser.json())
 
