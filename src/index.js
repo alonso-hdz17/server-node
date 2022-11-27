@@ -17,7 +17,7 @@ const app = express()
 app.use(morgan(process.env.MORGAN_LOG))
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: process.env.ORIGIN,
     exposedHeaders: ['x-total-count', 'x-total-pages'],
   }),
 )
